@@ -1,6 +1,6 @@
 package com.github.mgljava.listener;
 
-import com.github.mgljava.Main;
+import com.github.mgljava.utils.GenerateUtils;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
@@ -35,7 +35,7 @@ public class MyGenerateListener implements ActionListener {
     String packageName = this.packageNameField.getText();
     String rootClassName = this.rootClassNameField.getText();
     String jsonStr = jsonInputArea.getText();
-    Main.generate(rootPath, packageName, rootClassName, jsonStr);
+    GenerateUtils.generate(rootPath, packageName, rootClassName, jsonStr);
     // 处理结果
     this.generateResultField.setText("代码生成成功");
   }
