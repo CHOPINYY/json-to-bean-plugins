@@ -13,7 +13,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="toBean" anchor="right" factoryClass="com.github.mgljava.ui.MyWindow" />
+        <toolWindow id="Json2Bean" anchor="right" factoryClass="com.github.mgljava.ui.MyWindow" />
     </extensions>
 
     <actions>
