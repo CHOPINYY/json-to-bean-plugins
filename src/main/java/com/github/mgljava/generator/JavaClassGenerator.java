@@ -20,7 +20,7 @@ public class JavaClassGenerator {
   public JavaClassGenerator() throws IOException {
     Configuration configuration = new Configuration(DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
     configuration.setClassForTemplateLoading(this.getClass(), "/");
-    template = configuration.getTemplate("java.ftl");
+    template = configuration.getTemplate("javaClass.ftl");
 
   }
 
