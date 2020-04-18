@@ -5,7 +5,7 @@ import com.github.mgljava.generator.JavaClassGenerator;
 import com.github.mgljava.processor.JsonProcessor;
 import java.util.List;
 
-public class GenerateUtils {
+public final class GenerateUtils {
 
   private GenerateUtils() {
   }

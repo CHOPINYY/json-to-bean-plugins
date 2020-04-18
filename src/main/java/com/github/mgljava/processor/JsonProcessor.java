@@ -11,7 +11,7 @@ import com.google.gson.JsonPrimitive;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonProcessor {
+public final class JsonProcessor {
 
   private final List<ClassEntity> classEntities;
   private final JsonParser parser;
@@ -63,8 +63,8 @@ public class JsonProcessor {
     }
     JsonElement element = jsonArray.iterator().next();
     if (element.isJsonObject()) {
-      arrayFieldEntity.setFieldType(insertGeneric(generic, StringUtils.reverseFirstLetter(key) + "Item"));
-      parse(key + "Item", element, null, true);
+      arrayFieldEntity.setFieldType(insertGeneric(generic, StringUtils.reverseFirstLetter(key)));
+      parse(key, element, null, true);
     } else if (element.isJsonPrimitive()) {
       JsonPrimitive primitive = element.getAsJsonPrimitive();
       if (primitive.isString()) {

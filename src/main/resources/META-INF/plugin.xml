@@ -1,19 +1,17 @@
 <idea-plugin>
     <id>com.github.mgljava.json-to-bean-plugins</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>Json2Bean</name>
+    <vendor email="guangliang1120@gmail.com" url="http://github.com/mgljava">No Company</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
+    Json字符串转为JavaBean插件<br>
     <em>most HTML tags may be used</em>
     ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="Json2Bean" anchor="right" factoryClass="com.github.mgljava.ui.MyWindow" />
+        <toolWindow id="Json2Bean" anchor="right" factoryClass="com.github.mgljava.ui.Json2BeanWindow"/>
     </extensions>
 
     <actions>
