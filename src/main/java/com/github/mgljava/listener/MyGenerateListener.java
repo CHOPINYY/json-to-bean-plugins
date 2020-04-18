@@ -13,29 +13,28 @@ public class MyGenerateListener implements ActionListener {
   private final JTextField packageNameField;
   private final JTextField rootClassNameField;
   private final JTextField generateResultField;
-  private final JTextArea mResultArea;
+  private final JTextArea jsonInputArea;
 
   public MyGenerateListener(JTextField rootPathField, JTextField packageNameField,
-      JTextField rootClassNameField, JTextField generateResultField, JTextArea mResultArea) {
+      JTextField rootClassNameField, JTextField generateResultField, JTextArea jsonInputArea) {
     this.rootPathField = rootPathField;
     this.packageNameField = packageNameField;
     this.rootClassNameField = rootClassNameField;
     this.generateResultField = generateResultField;
-    this.mResultArea = mResultArea;
+    this.jsonInputArea = jsonInputArea;
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    String word = this.rootPathField.getText();
+    String word = this.jsonInputArea.getText();
     if (StringUtils.isBlank(word)) {
-      this.mResultArea.setText("please insert data");
-      this.rootPathField.setText("");
+      this.jsonInputArea.setText("请输入需要转换的Json字符串!");
+      return;
     }
-    String rootPath = this.rootPathField.getText();
+    String rootPath = this.rootPathField.getText() + "/";
     String packageName = this.packageNameField.getText();
     String rootClassName = this.rootClassNameField.getText();
-    // String jsonStr = mResultArea.getText();
-    String jsonStr = "{\"user\":{\"name\":\"zhangsan\",\"age\":10}}";
+    String jsonStr = jsonInputArea.getText();
     Main.generate(rootPath, packageName, rootClassName, jsonStr);
     // 处理结果
     this.generateResultField.setText("代码生成成功");

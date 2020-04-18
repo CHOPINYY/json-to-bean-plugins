@@ -7,11 +7,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class FileListener implements ActionListener {
+public class FileChooserListener implements ActionListener {
 
   private final JTextField jTextField;
 
-  public FileListener(JTextField jTextField) {
+  public FileChooserListener(JTextField jTextField) {
     this.jTextField = jTextField;
   }
 
@@ -19,7 +19,7 @@ public class FileListener implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     JFileChooser chooser = new JFileChooser();
     chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-    chooser.showDialog(new JLabel(), "选择");
+    chooser.showDialog(new JLabel(), "就是它了");
     File file = chooser.getSelectedFile();
     jTextField.setText(file.getAbsoluteFile().toString());
   }
